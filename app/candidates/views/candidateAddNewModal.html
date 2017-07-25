@@ -1,0 +1,41 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title"> Add a new candidate
+</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <form name="candidateForm" novalidate>
+                <div class="form-group">
+                    <label>* Social Security Number:</label>
+                    <input type="number" class="form-control" ng-model="candidate._id" autofocus required>
+                </div>
+                <div class="form-group">
+                    <label>* Name:</label>
+                    <input type="text" class="form-control" ng-model="candidate.name" autofocus required>
+                </div>
+                <div class="form-group">
+                    <label>* Last Name:</label>
+                    <input type="text" class="form-control" ng-model="candidate.last_name" required>
+                </div>
+                <div class="form-group">
+                    <label>* Date of birth :
+                        <input type="text" datetime="yyyy/MM/dd" datetime-model="yyyy-MM-ddTHH:mm:ss.sss" class="form-control "  ng-model="candidate.date_of_birth" required>
+                </div>
+                <div class="form-group">
+                    <label>* Occupation: </label>
+                    <input type="text" class="form-control" ng-model="candidate.occupation" required>
+                </div>
+                <div class="form-group">
+                    <label>Gender: </label>
+                    <select ng-model="candidate.gender" ng-options="o as o for o in options">
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger" type="button" ng-click="cancel()"><i class="glyphicon glyphicon-remove"></i> Close</button>
+    <button ng-disabled="!candidateForm.$valid" class="btn btn-success" type="button" ng-click="save()"><i class="glyphicon glyphicon-floppy-disk"></i> Save</button>
+</div>

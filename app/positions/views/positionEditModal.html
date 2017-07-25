@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title"> Edit position
+</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <form name="positionForm" id="positionForm" novalidate>
+                <div class="form-group">
+                    <label>* Position ID:</label>
+                    <input type="number" class="form-control" ng-model="positionToEdit._id" ng-disabled="true" required>
+                </div>
+                <p>* Position Name: </p>
+                <input type="text" class="form-control" ng-model="positionToEdit.position_name" autofocus required>
+                <br>
+                <p>* Purpose: </p>
+                <textarea type="text" class="form-control" ng-model="positionToEdit.purpose" rows="5" required> </textarea>
+                <br>
+                <p>Responsibilities: </p>
+                <textarea type="text" class="form-control" ng-model="positionToEdit.responsibilities" rows="5"> </textarea>
+                <br>
+                <p>Required Qualifications: </p>
+                <textarea type="text" class="form-control" ng-model="positionToEdit.qualifications" rows="5"> </textarea>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger" type="button" ng-click="cancel()"><i class="glyphicon glyphicon-remove"></i> Close</button>
+    <button ng-disabled="!positionForm.$valid" class="btn btn-success" type="button" ng-click="edit()"><i class="glyphicon glyphicon-floppy-disk"></i> Save</button>
+</div>
